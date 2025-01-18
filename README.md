@@ -1,11 +1,11 @@
-About py-linux-ports
-====================
+About py-linux-ports-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/py-linux-ports-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/sujitmandal/py-linux-ports
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/py-linux-ports-feedstock/blob/main/LICENSE.txt)
 
 Summary: Check Linux System Port's Status.
 
@@ -43,50 +43,43 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `py-linux-ports` can be installed with:
+Once the `conda-forge` channel has been enabled, `py-linux-ports` can be installed with `conda`:
 
 ```
 conda install py-linux-ports
 ```
 
-It is possible to list all of the versions of `py-linux-ports` available on your platform with:
+or with `mamba`:
+
+```
+mamba install py-linux-ports
+```
+
+It is possible to list all of the versions of `py-linux-ports` available on your platform with `conda`:
 
 ```
 conda search py-linux-ports --channel conda-forge
 ```
 
-## py-linux-ports
-Check Linux System Port's Status
+or with `mamba`:
 
-[![Build Status](https://app.travis-ci.com/sujitmandal/py-linux-ports.svg?branch=master)](https://app.travis-ci.com/sujitmandal/py-linux-ports) ![GitHub license](https://img.shields.io/github/license/sujitmandal/py-linux-ports) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/py-linux-ports) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/py-linux-ports)  ![PyPI](https://img.shields.io/pypi/v/py-linux-ports) [![Conda Version](https://img.shields.io/conda/vn/conda-forge/py-linux-ports.svg)](https://anaconda.org/conda-forge/py-linux-ports) [![Anaconda-Server Badge](https://anaconda.org/conda-forge/py-linux-ports/badges/version.svg)](https://anaconda.org/conda-forge/py-linux-ports) [![Anaconda-Server Badge](https://anaconda.org/conda-forge/py-linux-ports/badges/installer/conda.svg)](https://conda.anaconda.org/conda-forge) [![Anaconda-Server Badge](https://anaconda.org/conda-forge/py-linux-ports/badges/platforms.svg)](https://anaconda.org/conda-forge/py-linux-ports) [![Conda Recipe](https://img.shields.io/badge/recipe-py--linux--ports-green.svg)](https://anaconda.org/conda-forge/py-linux-ports) ![](https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/py-linux-ports-feedstock?branchName=main)
-
-
-[![Downloads](https://pepy.tech/badge/py-linux-ports)](https://pepy.tech/project/py-linux-ports)
-
-
-
-## Package Installation  : 
 ```
-pip install py-linux-ports
+mamba search py-linux-ports --channel conda-forge
 ```
-[Package Link](https://pypi.org/project/py-linux-ports/)
 
+Alternatively, `mamba repoquery` may provide more information:
 
-## Py-Linux-Port's: 
-```python
-import json
-from PyLinuxPorts.PyLinuxPorts import portScan 
-
-IpAddress = "192.168.43.133"
-PortNumber = 65000
-
-result  = portScan(IpAddress, PortNumber)
-
-print(json.dumps(result, indent=4))
-
-with open('result.json', 'w') as i:
-    json.dump(result, i)
 ```
+# Search all versions available on your platform:
+mamba repoquery search py-linux-ports --channel conda-forge
+
+# List packages depending on `py-linux-ports`:
+mamba repoquery whoneeds py-linux-ports --channel conda-forge
+
+# List dependencies of `py-linux-ports`:
+mamba repoquery depends py-linux-ports --channel conda-forge
+```
+
 
 About conda-forge
 =================
@@ -102,10 +95,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
